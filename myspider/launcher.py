@@ -5,7 +5,7 @@ from sitemap_extractor import SitemapExtractor
 from worker import run_spider_job
 from multiprocessing import Pool
 
-QUEUE_URL = 'https://sqs.us-east-1.amazonaws.com/.../webscraping'
+QUEUE_URL = 'https://sqs.us-east-1.amazonaws.com/884203033942/webscraping'
 S3_BUCKET = 'rapidious-datalake'
 sqs = boto3.client('sqs', region_name='us-east-1')
 
