@@ -1,0 +1,621 @@
+source_url,sitemap_urls,patterns,css_pattern,powered_by,dealer_name,count
+https://www.hannerrv.com,"[""http://www.hannerrv.com/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.hannerrv.com/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Hannerrv,302
+https://www.transwest.com,"[""https://www.transwest.com/inventory-sitemap.xml""]","[""rv""]","{""stock_number"":{""selector"":""li.section-product-specs-accordion__item:nth-child(7)""},""price"":{""selector"":""input[data-comp-financing-calculator='price']"",""attr"":""value""},""msrp"":{""selector"":""""},""year"":{""selector"":""div.specification-heading-description li:nth-child(3) span""},""class"":{""selector"":""li.section-product-specs-accordion__item:nth-child(1) a""},""options"":{""selector"":""div.section-product-specs-accordion__content-container ul.section-product-specs-accordion__content li"",""multiple"":true},""listing_address"":{""selector"":"".product-details__location a""},""heading"":{""selector"":"".product-details__heading""},""description"":{""selector"":""no description""},""vin"":{""selector"":""li.section-product-specs-accordion__item:nth-child(8)""},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":""div.section-media-gallery-main-media picture source"",""attr"":""srcset"",""multiple"":true},""phonelink"":{""selector"":"".product-details__lead-form-phone-number"",""attr"":""href""},""images_count"":{""selector"":""div.section-media-gallery-main-media picture source"",""count"":true}}",Pixel,Transwest,305
+www.hilmersonsportscenter.com,"[""https://www.hilmersonsportscenter.com//default.asp?page=xsitemap&s=NewInventory"", ""https://www.hilmersonsportscenter.com//default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{""stock_number"":{""selector"":"".liUnit.LiInvstock-number .unitValue.spnUnitValue""},""price"":{""selector"":"".price-value""},""msrp"":{""selector"":"".price-retail .price-value""},""year"":{""selector"":"".liUnit.LiInvyear .unitValue""},""class"":{""selector"":"".unitHighlights .liUnit.LiInvcategory .unitValue""},""options"":{""selector"":""div.unitHighlights ul"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""li.LiInvlocation .spnUnitValue""},""heading"":{""selector"":"".unitTitle h1""},""phonelink"":{""selector"":"".collapse-body a"",""attr"":""href""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":"".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue""},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":"".lS-image-wrapper img"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":"".lS-image-wrapper img"",""count"":true}}","""Dealer Spike""",Hilmersonsportscenter,310
+happycampertrailers.com,"[""https://www.happycampertrailers.com/default.asp?page=xsitemap&s=NewInventory"", ""https://www.happycampertrailers.com/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{
+    ""stock_number"": {
+        ""selector"": [
+            "".liUnit.LiInvstock-number .unitValue.spnUnitValue"",
+            "".liUnit.LiInvStockNumber .spnUnitValue"",
+            ""li.liUnit.LiInvstock-number span.unitValue""
+        ],
+        ""transform"": ""deduplicate_stock""
+    },
+    ""price"": {
+        ""selector"": [
+            ""div.price-price .price-value"",
+            "".lblUnitLabel .spnUnitValue"",
+            ""#unitPriceBox h2"",
+            "".price-value"",
+            "".price""
+        ]
+    },
+    ""msrp"": {
+        ""selector"": [
+            "".price-retail .price-value"",
+            "".liUnit.LiInvRetailPrice .spnUnitValue""
+        ]
+    },
+    ""year"": {
+        ""selector"": [
+            "".liUnit.LiInvyear .unitValue"",
+            "".liUnit.LiInvYear .spnUnitValue"",
+            ""li.liUnit.LiInvyear span.unitValue""
+        ]
+    },
+    ""class"": {
+        ""selector"": [
+            "".unitHighlights .liUnit.LiInvcategory .unitValue"",
+            ""li.liUnit.LiInvcategory span.unitValue""
+        ]
+    },
+    ""options"": {
+        ""selector"": [
+            ""div.unitHighlights ul"",
+            "".invUnitInfoTable li""
+        ],
+        ""custom"": true,
+        ""multiple"": true
+    },
+    ""listing_address"": {
+        ""selector"": [
+            ""li.LiInvlocation .spnUnitValue"",
+            "".liUnit.LiInvLocation .spnUnitValue"",
+            "".footer-full-address abbr"",
+            "".footer-address-l2 abbr"",
+            ""div.vcard .street-address""
+        ]
+    },
+    ""heading"": {
+        ""selector"": [
+            "".unitTitle h1"",
+            ""h1""
+        ]
+    },
+    ""phonelink"": {
+        ""selector"": [
+            ""a.footer-phone__link"",
+            "".footer-phone a"",
+            "".collapse-body a"",
+            "".dealer-phone a"",
+            "".footer-phone__link"",
+            "".phone a"",
+            "".header-phone a"",
+            "".footer-phone-map a"",
+            "".dealer-phone-sales a"",
+            "".footer-column a"",
+            "".footer-column__content a"",
+            ""a.header-phone__link""
+        ],
+        ""attr"": ""href""
+    },
+    ""description"": {
+        ""selector"": [
+            ""meta[name='description']""
+        ],
+        ""attr"": ""content""
+    },
+    ""vin"": {
+        ""selector"": [
+            "".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue"",
+            "".liUnit.LiInvVIN .spnUnitValue"",
+            ""li.liUnit.LiInvvin span.unitValue""
+        ]
+    },
+    ""dp_url"": {
+        ""selector"": [
+            ""link[rel='canonical']""
+        ],
+        ""attr"": ""href""
+    },
+    ""image_urls"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""multiple"": true
+    },
+    ""images_count"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""count"": true
+    }
+}",Dealer Spike,Happycampertrailers,312
+https://www.delmarvarvcenter.com/milford,"[""https://www.delmarvarvcenter.com/sitemap.xml""]","[""startswithyear""]","{""stock_number"":{""selector"":""#Information-tab .detailPage__specifications:nth-of-type(1) p:nth-of-type(2)::text""},""price"":{""selector"":""div.unit_sale_price span.detailPage__Price::text""},""msrp"":{""selector"":""div.unit_price span.detailPage__Price.text-decoration-line-through::text""},""year"":{""selector"":""#Information-tab .detailPage__specifications:nth-of-type(5) p:nth-of-type(2)::text""},""class"":{""selector"":""""},""options"":{""selector"":""#Information-tab"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""#Information-tab .detailPage__specifications:nth-of-type(3) p:nth-of-type(2)::text""},""heading"":{""selector"":""h1.detailPage__header::text""},""phonelink"":{""selector"":""a.detail-phone::attr(href)""},""description"":{""selector"":""meta[name=\""description\""]::attr(content)""},""vin"":{""selector"":""#Information-tab .detailPage__specifications:nth-of-type(2) p:nth-of-type(2)::text""},""dp_url"":{""selector"":""meta[property=\""og:url\""]::attr(content)""},""image_urls"":{""selector"":"".detail__imageGrid__main img::attr(src), .detail__imageGrid__secondary img::attr(data-src)"",""multiple"":true},""images_count"":{""selector"":"".detail__imageGrid__main img, .detail__imageGrid__secondary img"",""count"":true}}",,Delmarvarvcenter,314
+https://funtownrvmi.com,"[""https://funtownrvmi.com/dtk_im2_inventory-sitemap.xml""]","[""inventory""]","{""stock_number"":{""selector"":""div.specification:nth-of-type(1) .right span""},""price"":{""selector"":""div.sale_price span:last-child""},""msrp"":{""selector"":""div.msrp span:last-child""},""year"":{""selector"":"".specifications .specification:nth-child(5) .right span""},""class"":{""selector"":""""},""options"":{""selector"":"".specifications div"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""description"":{""selector"":""div.description .pages .page.selected""},""vin"":{""selector"":"".specifications .specification:nth-child(3) .right span""},""dp_url"":{""selector"":""a[href^='https://funtownrvindiana.com/locations/']""},""image_urls"":{""selector"":""img"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":""img"",""count"":true},""phonelink"":{""selector"":"".footer-number::text""}}",TotalDealer,Funtownrvmi,318
+https://toliverrv.com,"[""https://www.toliverrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.unit-location-wrapper span.unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Toliverrv,328
+https://leosrv.com,"[""https://www.leosrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Leosrv,331
+https://www.bmotors.us,"[""https://www.bmotors.us/sitemap.xml""]","[""inventory""]","{""stock_number"":{""selector"":""div.stock-container""},""price"":{""selector"":""div.price-container""},""msrp"":{""selector"":""""},""year"":{""selector"":""""},""class"":{""selector"":""""},""options"":{""selector"":"""",""multiple"":true},""listing_address"":{""selector"":""div.dealer-address""},""heading"":{""selector"":""h3.entry-title""},""phonelink"":{""selector"":""a.dealer-phone[href^='tel:']""},""description"":{""selector"":""""},""vin"":{""selector"":""""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""div.swiper-slide img"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":""div.swiper-slide img"",""count"":true}}",Dealr Cloud,Bmotors,332
+https://www.gullboatsandrv.com,"[""http://www.gullboatsandrv.com/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.gullboatsandrv.com/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""span.lot-descript""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Gullboatsandrv,332
+https://rvconnections.com,"[""https://www.rvconnections.com/sitemap.xml""]","[""inventory""]","{""stock_number"":{""selector"":""tr.bd-stock td:nth-child(2)""},""price"":{""selector"":""#price-sale .price-value""},""msrp"":{""selector"":""#price-msrp .price-value""},""year"":{""selector"":""tr.bd-year td:nth-child(2)""},""class"":{""selector"":""tr.spec_class td:nth-child(2)""},""options"":{""selector"":""table.spec-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.vdp-contact a[href*='maps'] span:nth-child(2)""},""heading"":{""selector"":""h1.widget-inventory-title""},""phonelink"":{""selector"":""div.vdp-contact a[href^='tel:']""},""description"":{""selector"":""div.widget-web-desc""},""vin"":{""selector"":""tr.spec_vin td:nth-child(2)""},""dp_url"":{""selector"":""link[rel='canonical']""},""image_urls"":{""selector"":""#media-container img.show-text.ug-thumb-image"",""multiple"":true},""images_count"":{""selector"":""#media-container img.show-text.ug-thumb-image"",""count"":true}}",Ride Digital,Rvconnections,335
+https://wadesrv.com,"[""https://www.wadesrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.unit-location-wrapper span.unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Wadesrv,338
+https://www.holidayrv.net,"[""http://www.holidayrv.net/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.holidayrv.net/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory"", ""https://www.holidayrv.net/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""https://www.holidayrv.net/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""span.unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Holidayrv,340
+https://www.rvshoponline.com,"[""http://www.rvshoponline.com/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.rvshoponline.com/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Rvshoponline,340
+http://rvsuperdeals.com,"[""http://www.rvsuperdeals.com/sitemap.xml""]","[""startswithyear""]","{""vin"":{""selector"":""div.paragraph font:nth-of-type(26)"",""attr"":""text""},""stock_number"":{""selector"":""div.paragraph font:nth-of-type(24)"",""attr"":""text""},""price"":{""selector"":""h2.wsite-content-title font[color='#f40707']""},""description"":{""selector"":""div.paragraph strong""},""options"":{""selector"":"".wsite-multicol-tr"",""attr"":""text"",""multiple"":true},""listing_address"":{""selector"":""div.paragraph strong font[size='2']"",""attr"":""text""},""heading"":{""selector"":""h2.wsite-content-title font[color='#0404f6']""},""image_urls"":{""selector"":"".wsite-image img"",""attr"":""src"",""multiple"":true},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""images_count"":{""selector"":"".wsite-image img"",""count"":true},""phonelink"":{""selector"":""div.paragraph font[size='2']"",""attr"":""text""}}",,Rvsuperdeals,344
+https://www.camperland-rv.com,"[""https://www.camperland-rv.com/sitemap.xml""]","[""inventory""]","{""stock_number"":{""selector"":[""span[itemprop='sku']"","".table .bd-stock td:nth-of-type(2)""]},""price"":{""selector"":["".finalcolor .prnumber"",""#price-sale .price-value""]},""msrp"":{""selector"":"".msrpcolor .prnumber""},""year"":{""selector"":[""h1.special_header"","".table .bd-year td:nth-of-type(2)""]},""class"":{""selector"":""span[itemprop='category']""},""options"":{""selector"":""table.widget"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""footer address""},""heading"":{""selector"":""meta[property='og:title']::attr(content)""},""phonelink"":{""selector"":""#upper-contact a[href^='tel:']::attr(href)""},""description"":{""selector"":""div.widget.widget-web-desc p""},""vin"":{""selector"":""table.table-condensed small""},""dp_url"":{""selector"":""link[rel='canonical']::attr(href)""},""image_urls"":{""selector"":""#media-container img.show-text"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":""#media-container img.show-text"",""count"":true}}","""Inventrue""",Camperland-rv,350
+https://carolinarv.com,"[""https://www.carolinarv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":"".SpecsTable"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Carolinarv,351
+https://rothrv.com,"[""https://www.rothrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":"".SpecsTable"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Rothrv,351
+campersunlimited.net,"[""https://www.campersunlimited.net/default.asp?page=xsitemap&s=NewInventory"", ""https://www.campersunlimited.net/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{
+    ""stock_number"": {
+        ""selector"": [
+            "".liUnit.LiInvstock-number .unitValue.spnUnitValue"",
+            "".liUnit.LiInvStockNumber .spnUnitValue"",
+            ""li.liUnit.LiInvstock-number span.unitValue""
+        ],
+        ""transform"": ""deduplicate_stock""
+    },
+    ""price"": {
+        ""selector"": [
+            ""div.price-price .price-value"",
+            "".lblUnitLabel .spnUnitValue"",
+            ""#unitPriceBox h2"",
+            "".price-value"",
+            "".price""
+        ]
+    },
+    ""msrp"": {
+        ""selector"": [
+            "".price-retail .price-value"",
+            "".liUnit.LiInvRetailPrice .spnUnitValue""
+        ]
+    },
+    ""year"": {
+        ""selector"": [
+            "".liUnit.LiInvyear .unitValue"",
+            "".liUnit.LiInvYear .spnUnitValue"",
+            ""li.liUnit.LiInvyear span.unitValue""
+        ]
+    },
+    ""class"": {
+        ""selector"": [
+            "".unitHighlights .liUnit.LiInvcategory .unitValue"",
+            ""li.liUnit.LiInvcategory span.unitValue""
+        ]
+    },
+    ""options"": {
+        ""selector"": [
+            ""div.unitHighlights ul"",
+            "".invUnitInfoTable li""
+        ],
+        ""custom"": true,
+        ""multiple"": true
+    },
+    ""listing_address"": {
+        ""selector"": [
+            ""li.LiInvlocation .spnUnitValue"",
+            "".liUnit.LiInvLocation .spnUnitValue"",
+            "".footer-full-address abbr"",
+            "".footer-address-l2 abbr"",
+            ""div.vcard .street-address""
+        ]
+    },
+    ""heading"": {
+        ""selector"": [
+            "".unitTitle h1"",
+            ""h1""
+        ]
+    },
+    ""phonelink"": {
+        ""selector"": [
+            ""a.footer-phone__link"",
+            "".footer-phone a"",
+            "".collapse-body a"",
+            "".dealer-phone a"",
+            "".footer-phone__link"",
+            "".phone a"",
+            "".header-phone a"",
+            "".footer-phone-map a"",
+            "".dealer-phone-sales a"",
+            "".footer-column a"",
+            "".footer-column__content a"",
+            ""a.header-phone__link""
+        ],
+        ""attr"": ""href""
+    },
+    ""description"": {
+        ""selector"": [
+            ""meta[name='description']""
+        ],
+        ""attr"": ""content""
+    },
+    ""vin"": {
+        ""selector"": [
+            "".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue"",
+            "".liUnit.LiInvVIN .spnUnitValue"",
+            ""li.liUnit.LiInvvin span.unitValue""
+        ]
+    },
+    ""dp_url"": {
+        ""selector"": [
+            ""link[rel='canonical']""
+        ],
+        ""attr"": ""href""
+    },
+    ""image_urls"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""multiple"": true
+    },
+    ""images_count"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""count"": true
+    }
+}",Dealer Spike,Campersunlimited,354
+https://www.sevenos.com,"[""http://www.sevenos.com/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.sevenos.com/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Sevenos,356
+https://happydazerv.com,"[""https://www.happydazerv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Happydazerv,360
+https://ddrv.com,"[""https://www.ddrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Ddrv,369
+https://rvtradesok.com,"[""https://www.rvtradesok.com/sitemap.xml""]","[""inventory""]","{""stock_number"":{""selector"":""""},""price"":{""selector"":""div.container.specs .row > div.col-md-4:nth-child(1) .panel-body::text""},""msrp"":{""selector"":""""},""year"":{""selector"":""h1.post-title div::text""},""class"":{""selector"":""div.container.specs .row > div.col-md-4:nth-child(4) .panel-body::text""},""options"":{""selector"":""div.container.specs::text"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.col-md-4.sidebar > p:nth-of-type(4)::text""},""heading"":{""selector"":""h1.post-title div::text""},""phonelink"":{""selector"":""div.menu-sidebar a[href^=\""tel:\""]::attr(href)""},""description"":{""selector"":""meta[name=\""description\""]::attr(content)""},""vin"":{""selector"":""div.container.specs .row > div.col-md-4:nth-child(2) .panel-body::text""},""dp_url"":{""selector"":""link[rel=\""canonical\""]::attr(href)""},""image_urls"":{""selector"":""ul#slider li::attr(data-src)"",""attr"":""data-src"",""multiple"":true},""images_count"":{""selector"":""ul#slider li"",""count"":true}}",,Rvtradesok,370
+https://littledealer.com,"[""http://www.littledealer.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Littledealer,371
+https://sr1rv.com,"[""https://www.sr1rv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Sr1rv,374
+shoedersmarine.com,"[""https://www.shoedersmarine.com/default.asp?page=xsitemap&s=NewInventory"", ""https://www.shoedersmarine.com/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{
+    ""stock_number"": {
+        ""selector"": [
+            "".liUnit.LiInvstock-number .unitValue.spnUnitValue"",
+            "".liUnit.LiInvStockNumber .spnUnitValue"",
+            ""li.liUnit.LiInvstock-number span.unitValue""
+        ],
+        ""transform"": ""deduplicate_stock""
+    },
+    ""price"": {
+        ""selector"": [
+            ""div.price-price .price-value"",
+            "".lblUnitLabel .spnUnitValue"",
+            ""#unitPriceBox h2"",
+            "".price-value"",
+            "".price""
+        ]
+    },
+    ""msrp"": {
+        ""selector"": [
+            "".price-retail .price-value"",
+            "".liUnit.LiInvRetailPrice .spnUnitValue""
+        ]
+    },
+    ""year"": {
+        ""selector"": [
+            "".liUnit.LiInvyear .unitValue"",
+            "".liUnit.LiInvYear .spnUnitValue"",
+            ""li.liUnit.LiInvyear span.unitValue""
+        ]
+    },
+    ""class"": {
+        ""selector"": [
+            "".unitHighlights .liUnit.LiInvcategory .unitValue"",
+            ""li.liUnit.LiInvcategory span.unitValue""
+        ]
+    },
+    ""options"": {
+        ""selector"": [
+            ""div.unitHighlights ul"",
+            "".invUnitInfoTable li""
+        ],
+        ""custom"": true,
+        ""multiple"": true
+    },
+    ""listing_address"": {
+        ""selector"": [
+            ""li.LiInvlocation .spnUnitValue"",
+            "".liUnit.LiInvLocation .spnUnitValue"",
+            "".footer-full-address abbr"",
+            "".footer-address-l2 abbr"",
+            ""div.vcard .street-address""
+        ]
+    },
+    ""heading"": {
+        ""selector"": [
+            "".unitTitle h1"",
+            ""h1""
+        ]
+    },
+    ""phonelink"": {
+        ""selector"": [
+            ""a.footer-phone__link"",
+            "".footer-phone a"",
+            "".collapse-body a"",
+            "".dealer-phone a"",
+            "".footer-phone__link"",
+            "".phone a"",
+            "".header-phone a"",
+            "".footer-phone-map a"",
+            "".dealer-phone-sales a"",
+            "".footer-column a"",
+            "".footer-column__content a"",
+            ""a.header-phone__link""
+        ],
+        ""attr"": ""href""
+    },
+    ""description"": {
+        ""selector"": [
+            ""meta[name='description']""
+        ],
+        ""attr"": ""content""
+    },
+    ""vin"": {
+        ""selector"": [
+            "".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue"",
+            "".liUnit.LiInvVIN .spnUnitValue"",
+            ""li.liUnit.LiInvvin span.unitValue""
+        ]
+    },
+    ""dp_url"": {
+        ""selector"": [
+            ""link[rel='canonical']""
+        ],
+        ""attr"": ""href""
+    },
+    ""image_urls"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""multiple"": true
+    },
+    ""images_count"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""count"": true
+    }
+}",Dealer Spike,Shoedersmarine,380
+https://crestviewrv.com,"[""https://www.crestviewrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Crestviewrv,385
+https://broadmoorrv.com,"[""https://www.broadmoorrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Broadmoorrv,390
+https://skyriverrv.com,"[""https://www.skyriverrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Skyriverrv,391
+https://truerv.net,"[""https://truerv.net/product-sitemap.xml""]","[""rv""]","{""vin"":{""selector"":"".product_attributes > .col:nth-of-type(6) > .att_value p""},""listing_address"":{""selector"":""#contactAddress p:first-of-type a""},""options"":{""selector"":"".product_attributes > .col:nth-of-type(6) > .att_value p"",""multiple"":true},""class"":{""selector"":"".att_value p""},""price"":{""selector"":"".woocommerce-Price-amount.amount""},""msrp"":{""selector"":"".msrp""},""heading"":{""selector"":""#productTitle h1""},""image_urls"":{""selector"":"".flex-control-nav.flex-control-thumbs li img::attr(src)"",""multiple"":true},""images_count"":{""selector"":"".flex-control-nav.flex-control-thumbs li img::attr(src)"",""count"":true},""phonelink"":{""selector"":""#phoneContact a[href^='tel:']""}}",,Truerv,393
+https://elmontervsales.com,"[""https://elmontervsales.com/listings-sitemap.xml""]","[""listings""]","{""stock_number"":{""selector"":""span.elementor-heading-title.elementor-size-default""},""price"":{""selector"":""div.jet-listing-dynamic-field__content > span.main""},""msrp"":{""selector"":""""},""year"":{""selector"":""span.elementor-heading-title.elementor-size-default"",""multiple"":true},""class"":{""selector"":""li.data-list-item > span.heading-font[title]""},""options"":{""selector"":""div.stm-single-car-listing-data ul.data-list-wrap li.data-list-item"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""div.elementor-element-c00807b > div.elementor-widget-container""},""heading"":{""selector"":""h1.title.stm_listing_title""},""description"":{""selector"":""div.elementor-shortcode""},""vin"":{""selector"":""li.data-list-item > span.item-label"",""custom"":true},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":""div.mosaic-gallery a.stm_fancybox"",""attr"":""href"",""multiple"":true},""phonelink"":{""selector"":""div.elementor-element-fd135f6 > div.elementor-widget-container""},""images_count"":{""selector"":""div.mosaic-gallery a.stm_fancybox"",""count"":true}}",,Elmontervsales,398
+https://www.bergesonrv.com,"[""https://www.bergesonrv.com/sitemap.xml""]","[""startswithyear""]","{""stock_number"":{""selector"":""""},""price"":{""selector"":"".sqs-layout .sqs-html-content p strong, .sqs-layout .sqs-html-content p:last-child strong""},""msrp"":{""selector"":"".sqs-layout .sqs-html-content p:last-child""},""year"":{""selector"":"".sqs-layout .sqs-html-content h2, .sqs-layout .sqs-html-content h1""},""class"":{""selector"":"".header-nav-folder-content .header-nav-folder-item a""},""options"":{""selector"":"".sqs-layout .sqs-html-content p:first-of-type"",""multiple"":true},""listing_address"":{""selector"":""footer .sqs-html-content p, .fe-block .sqs-html-content p""},""heading"":{""selector"":"".sqs-layout .sqs-html-content h2, .sqs-layout .sqs-html-content h4, .sqs-layout .sqs-html-content h1""},""phonelink"":{""selector"":""a[href^='tel:']""},""description"":{""selector"":"".sqs-layout .sqs-html-content p:first-of-type""},""vin"":{""selector"":""""},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":"".gallery-slideshow-item-img img, .gallery img, .sqs-gallery img"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":"".gallery-slideshow-item-img img, .gallery img, .sqs-gallery img"",""count"":true}}",,Bergesonrv,398
+https://rnrrv.com,"[""https://www.rnrrv.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Rnrrv,408
+https://camperliquidators.com,"[""https://www.camperliquidators.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Camperliquidators,410
+https://recreationusa.com,"[""https://www.recreationusa.com/sitemap.xml""]","[""product/new"", ""product/used""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Recreationusa,418
+demartinirv.com,"[""http://demartinirv.com/sitemap.xml""]","[""vehicles""]","{""stock_number"":{""selector"":"".stock-number""},""price"":{""selector"":"".price.purple.bold""},""year"":{""selector"":""div.title-box h2"",""custom"":true},""class"":{""selector"":""table.pure-table.oxygen tr:nth-of-type(5) td:nth-of-type(2)""},""options"":{""selector"":""#equipment"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":""#contact-box .big-font""},""heading"":{""selector"":""div.title-box h2""},""phonelink"":{""selector"":""#contact-box a.yellow[href^='tel:']"",""attr"":""href""},""description"":{""selector"":""#description_info""},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":"".list-thumbs img"",""attr"":""href"",""multiple"":true},""images_count"":{""selector"":"".list-thumbs img"",""count"":true}}",,Demartinirv,419
+https://www.colmansrv.com,"[""http://www.colmansrv.com/sitemap.xml/default.asp?page=xsitemap&s=NewInventory"", ""http://www.colmansrv.com/sitemap.xml/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""product/new-"", ""product/used-""]","{""stock_number"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-stocknumber""},""price"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-saleprice""},""msrp"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-msrp""},""year"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-year""},""class"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-type""},""options"":{""selector"":""div.specs-table-wrapper table.specs-table"",""custom"":true,""multiple"":true},""listing_address"":{""selector"":"".unit-location-wrapper .unit-location-text"",""attr"":""text""},""heading"":{""selector"":""meta[property='og:title']"",""attr"":""content""},""phonelink"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-phonelink""},""description"":{""selector"":""meta[name='description']"",""attr"":""content""},""vin"":{""selector"":""div.DetailPanel.InvDetail"",""attr"":""data-vin""},""dp_url"":{""selector"":""meta[property='og:url']"",""attr"":""content""},""image_urls"":{""selector"":""ul.slides.cycle-slideshow li img"",""attr"":""llsrc"",""multiple"":true},""images_count"":{""selector"":""ul.slides.cycle-slideshow li img"",""count"":true}}",Interact Rv,Colmansrv,420
+https://www.cflrv.com,"[""https://cflrv.com/uploads/sitemap.xml""]","[""startswithyear""]","{""stock_number"":{""selector"":""div.detailPage__specifications p:nth-of-type(2)""},""price"":{""selector"":""div.unit_sale_price span.detailPage__Price, div.unit_price span.detailPage__Price""},""msrp"":{""selector"":""div.unit_msrp span.detailPage__Price""},""year"":{""selector"":""div.detailPage__specifications p:nth-of-type(2)""},""class"":{""selector"":""div.detailPage__specifications p a""},""options"":{""selector"":""div#Specifications-tab, div#Features-tab"",""multiple"":true},""listing_address"":{""selector"":""div.footer__middleContainer__columnTwo p""},""heading"":{""selector"":""h1.detailPage__header""},""phonelink"":{""selector"":""p.footer-phone a[href^='tel:']""},""description"":{""selector"":""div#Description-tab .detailPage__description""},""vin"":{""selector"":""div.detailPage__specifications p:nth-of-type(2)""},""dp_url"":{""selector"":""link[rel='canonical']"",""attr"":""href""},""image_urls"":{""selector"":""div.row img"",""attr"":""src"",""multiple"":true},""images_count"":{""selector"":""div.row img"",""count"":true}}",NetSource Media,Cflrv,423
+airstreamspokane.com,"[""https://www.airstreamspokane.com/default.asp?page=xsitemap&s=NewInventory"", ""https://www.airstreamspokane.com/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{
+    ""stock_number"": {
+        ""selector"": [
+            "".liUnit.LiInvstock-number .unitValue.spnUnitValue"",
+            "".liUnit.LiInvStockNumber .spnUnitValue"",
+            ""li.liUnit.LiInvstock-number span.unitValue""
+        ],
+        ""transform"": ""deduplicate_stock""
+    },
+    ""price"": {
+        ""selector"": [
+            ""div.price-price .price-value"",
+            "".lblUnitLabel .spnUnitValue"",
+            ""#unitPriceBox h2"",
+            "".price-value"",
+            "".price""
+        ]
+    },
+    ""msrp"": {
+        ""selector"": [
+            "".price-retail .price-value"",
+            "".liUnit.LiInvRetailPrice .spnUnitValue""
+        ]
+    },
+    ""year"": {
+        ""selector"": [
+            "".liUnit.LiInvyear .unitValue"",
+            "".liUnit.LiInvYear .spnUnitValue"",
+            ""li.liUnit.LiInvyear span.unitValue""
+        ]
+    },
+    ""class"": {
+        ""selector"": [
+            "".unitHighlights .liUnit.LiInvcategory .unitValue"",
+            ""li.liUnit.LiInvcategory span.unitValue""
+        ]
+    },
+    ""options"": {
+        ""selector"": [
+            ""div.unitHighlights ul"",
+            "".invUnitInfoTable li""
+        ],
+        ""custom"": true,
+        ""multiple"": true
+    },
+    ""listing_address"": {
+        ""selector"": [
+            ""li.LiInvlocation .spnUnitValue"",
+            "".liUnit.LiInvLocation .spnUnitValue"",
+            "".footer-full-address abbr"",
+            "".footer-address-l2 abbr"",
+            ""div.vcard .street-address""
+        ]
+    },
+    ""heading"": {
+        ""selector"": [
+            "".unitTitle h1"",
+            ""h1""
+        ]
+    },
+    ""phonelink"": {
+        ""selector"": [
+            ""a.footer-phone__link"",
+            "".footer-phone a"",
+            "".collapse-body a"",
+            "".dealer-phone a"",
+            "".footer-phone__link"",
+            "".phone a"",
+            "".header-phone a"",
+            "".footer-phone-map a"",
+            "".dealer-phone-sales a"",
+            "".footer-column a"",
+            "".footer-column__content a"",
+            ""a.header-phone__link""
+        ],
+        ""attr"": ""href""
+    },
+    ""description"": {
+        ""selector"": [
+            ""meta[name='description']""
+        ],
+        ""attr"": ""content""
+    },
+    ""vin"": {
+        ""selector"": [
+            "".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue"",
+            "".liUnit.LiInvVIN .spnUnitValue"",
+            ""li.liUnit.LiInvvin span.unitValue""
+        ]
+    },
+    ""dp_url"": {
+        ""selector"": [
+            ""link[rel='canonical']""
+        ],
+        ""attr"": ""href""
+    },
+    ""image_urls"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""multiple"": true
+    },
+    ""images_count"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""count"": true
+    }
+}",Dealer Spike,Airstreamspokane,433
+bayareaairstream.com,"[""https://www.bayareaairstream.com/default.asp?page=xsitemap&s=NewInventory"", ""https://www.bayareaairstream.com/default.asp?page=xsitemap&s=PreOwnedInventory""]","[""New-Inventory"", ""Pre-owned-Inventory""]","{
+    ""stock_number"": {
+        ""selector"": [
+            "".liUnit.LiInvstock-number .unitValue.spnUnitValue"",
+            "".liUnit.LiInvStockNumber .spnUnitValue"",
+            ""li.liUnit.LiInvstock-number span.unitValue""
+        ],
+        ""transform"": ""deduplicate_stock""
+    },
+    ""price"": {
+        ""selector"": [
+            ""div.price-price .price-value"",
+            "".lblUnitLabel .spnUnitValue"",
+            ""#unitPriceBox h2"",
+            "".price-value"",
+            "".price""
+        ]
+    },
+    ""msrp"": {
+        ""selector"": [
+            "".price-retail .price-value"",
+            "".liUnit.LiInvRetailPrice .spnUnitValue""
+        ]
+    },
+    ""year"": {
+        ""selector"": [
+            "".liUnit.LiInvyear .unitValue"",
+            "".liUnit.LiInvYear .spnUnitValue"",
+            ""li.liUnit.LiInvyear span.unitValue""
+        ]
+    },
+    ""class"": {
+        ""selector"": [
+            "".unitHighlights .liUnit.LiInvcategory .unitValue"",
+            ""li.liUnit.LiInvcategory span.unitValue""
+        ]
+    },
+    ""options"": {
+        ""selector"": [
+            ""div.unitHighlights ul"",
+            "".invUnitInfoTable li""
+        ],
+        ""custom"": true,
+        ""multiple"": true
+    },
+    ""listing_address"": {
+        ""selector"": [
+            ""li.LiInvlocation .spnUnitValue"",
+            "".liUnit.LiInvLocation .spnUnitValue"",
+            "".footer-full-address abbr"",
+            "".footer-address-l2 abbr"",
+            ""div.vcard .street-address""
+        ]
+    },
+    ""heading"": {
+        ""selector"": [
+            "".unitTitle h1"",
+            ""h1""
+        ]
+    },
+    ""phonelink"": {
+        ""selector"": [
+            ""a.footer-phone__link"",
+            "".footer-phone a"",
+            "".collapse-body a"",
+            "".dealer-phone a"",
+            "".footer-phone__link"",
+            "".phone a"",
+            "".header-phone a"",
+            "".footer-phone-map a"",
+            "".dealer-phone-sales a"",
+            "".footer-column a"",
+            "".footer-column__content a"",
+            ""a.header-phone__link""
+        ],
+        ""attr"": ""href""
+    },
+    ""description"": {
+        ""selector"": [
+            ""meta[name='description']""
+        ],
+        ""attr"": ""content""
+    },
+    ""vin"": {
+        ""selector"": [
+            "".liUnit.LiInvvin.unitSpec .unitValue.spnUnitValue"",
+            "".liUnit.LiInvVIN .spnUnitValue"",
+            ""li.liUnit.LiInvvin span.unitValue""
+        ]
+    },
+    ""dp_url"": {
+        ""selector"": [
+            ""link[rel='canonical']""
+        ],
+        ""attr"": ""href""
+    },
+    ""image_urls"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""multiple"": true
+    },
+    ""images_count"": {
+        ""selector"": [
+            "".lS-image-wrapper img"",
+            "".background-image-container.item > .background-image"",
+            "".internalImages li > a"",
+            ""#invImageGallery img""
+        ],
+        ""attr"": ""src"",
+        ""count"": true
+    }
+}",Dealer Spike,Bayareaairstream,433

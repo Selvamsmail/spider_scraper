@@ -14,7 +14,7 @@ class SitemapExtractor:
     ]
     YEAR_PATTERN = re.compile(r'\b(19[4-9]\d|20[0-1]\d|202[0-6])\b')
 
-    def __init__(self, max_retries: int = 2, timeout: int = 60):
+    def __init__(self, max_retries: int = 2, timeout: int = 20):
         self.timeout = timeout
         
         # Setup requests session with retries
@@ -37,7 +37,7 @@ class SitemapExtractor:
     def fetch(self, url: str) -> Optional[str]:
         headers = self._get_random_headers()
         try:
-            response = self.session.get(url, headers=headers, timeout=self.timeout, verify=False)
+            response = self.session.get(url, headers=headers, timeout=self.timeout)
             if response.status_code == 200:
                 return response.text
             logging.warning(f"Non-200 status code: {response.status_code} for URL: {url}")
