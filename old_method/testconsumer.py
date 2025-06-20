@@ -15,16 +15,6 @@ QUEUE_URL = 'https://sqs.us-east-1.amazonaws.com/884203033942/webscraping'
 S3_BUCKET = 'rapidious-datalake'
 
 
-# sqs = boto3.client(
-#     'sqs',
-#     region_name='us-east-1',
-#     aws_access_key_id='test',
-#     aws_secret_access_key='test',
-#     endpoint_url='http://localhost:4566'
-# )
-# QUEUE_URL = 'http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/webscraping'
-
-
 def process_message(message_body, receipt_handle, queue_url):
     try:
         current_date = datetime.now().strftime("%Y%m%d")
@@ -63,7 +53,7 @@ def process_message(message_body, receipt_handle, queue_url):
 
         css_patterns = message_body.get('css_pattern', {})
         dealer_name = message_body.get('dealer_name', 'unknown_dealer')
-        s3_key_prefix = f"webscraping/tester_output/{current_date}/{dealer_name}"
+        s3_key_prefix = f"webscraping/testing_output/{current_date}/{dealer_name}"
         # s3_key_prefix = f"webscraping/dealer_output/20250608/{dealer_name}"
 
         processed_data = {

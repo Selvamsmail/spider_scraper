@@ -3,9 +3,8 @@ import json
 import traceback
 import sys
 import gc
-import multiprocessing
+import multiprocessing as mp
 import os
-import time
 from datetime import datetime
 from sitemap_extractor import SitemapExtractor
 from testspider import crawl_all_jobs
@@ -16,19 +15,6 @@ from twisted.internet.threads import deferToThread
 sqs = boto3.client('sqs', region_name='us-east-1')
 QUEUE_URL = 'https://sqs.us-east-1.amazonaws.com/884203033942/webscraping'
 S3_BUCKET = 'rapidious-datalake'
-
-# Get CPU count for multiprocessing
-CPU_COUNT = multiprocessing.cpu_count()
-print(f"System CPU count: {CPU_COUNT}")
-
-# sqs = boto3.client(
-#     'sqs',
-#     region_name='us-east-1',
-#     aws_access_key_id='test',
-#     aws_secret_access_key='test',
-#     endpoint_url='http://localhost:4566'
-# )
-# QUEUE_URL = 'http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/webscraping'
 
 
 def process_message(message_body, receipt_handle, queue_url):
@@ -58,10 +44,10 @@ def process_message(message_body, receipt_handle, queue_url):
         extractor = SitemapExtractor()
         urls = extractor.get_filtered_urls_from_source(message_body)
         if not urls:
-            print(f"No URLs found for dealer: {message_body.get('dealer_name', 'unknown')}")
+            print(f"Process {os.getpid()}: No URLs found for dealer: {message_body.get('dealer_name', 'unknown')}")
             # Delete message immediately if no URLs found
             sqs.delete_message(QueueUrl=queue_url, ReceiptHandle=receipt_handle)
-            print(f"Deleted message for dealer with no URLs: {message_body.get('dealer_name', 'unknown')}")
+            print(f"Process {os.getpid()}: Deleted message for dealer with no URLs: {message_body.get('dealer_name', 'unknown')}")
             return None
 
         url_list = [u['dp_url'] for u in urls]
@@ -69,7 +55,7 @@ def process_message(message_body, receipt_handle, queue_url):
 
         css_patterns = message_body.get('css_pattern', {})
         dealer_name = message_body.get('dealer_name', 'unknown_dealer')
-        s3_key_prefix = f"webscraping/tester_output/{current_date}/{dealer_name}"
+        s3_key_prefix = f"webscraping/testing_output/{current_date}/{dealer_name}"
         # s3_key_prefix = f"webscraping/dealer_output/20250608/{dealer_name}"
 
         processed_data = {
@@ -89,77 +75,16 @@ def process_message(message_body, receipt_handle, queue_url):
         return processed_data
 
     except Exception as e:
-        print(f"Error processing message: {e}")
+        print(f"Process {os.getpid()}: Error processing message: {e}")
         traceback.print_exc()
         return None
     finally:
         gc.collect()  # Force garbage collection
 
-
-def worker_process(process_id, job_batch):
-    """Worker process that handles a batch of jobs using Twisted reactor"""
-    print(f"Process {process_id} (PID: {os.getpid()}) starting with {len(job_batch)} jobs")
-    
-    @defer.inlineCallbacks
-    def process_jobs():
-        try:
-            if job_batch:
-                print(f"Process {process_id} starting crawl for {len(job_batch)} dealers...")
-                
-                # Wait for crawl completion and check success
-                crawl_success = yield crawl_all_jobs(job_batch)
-                if not crawl_success:
-                    print(f"Process {process_id}: Some spiders failed to complete successfully")
-                else:
-                    print(f"Process {process_id}: All jobs completed successfully")
-            else:
-                print(f"Process {process_id}: No valid jobs in this batch")
-                
-        except Exception as e:
-            print(f"Process {process_id} error during crawl_all_jobs: {e}")
-            traceback.print_exc()
-        finally:
-            print(f"Process {process_id} stopping reactor...")
-            reactor.stop()
-    
-    # Start the processing
-    task.deferLater(reactor, 0, process_jobs)
-    reactor.run()
-    print(f"Process {process_id} completed")
-
-
-def distribute_jobs_to_processes(dealer_jobs, num_processes):
-    """Distribute jobs across multiple processes"""
-    if not dealer_jobs:
-        return []
-    
-    # Calculate jobs per process
-    jobs_per_process = len(dealer_jobs) // num_processes
-    remainder = len(dealer_jobs) % num_processes
-    
-    job_batches = []
-    start_idx = 0
-    
-    for i in range(num_processes):
-        # Add one extra job to first 'remainder' processes
-        batch_size = jobs_per_process + (1 if i < remainder else 0)
-        
-        if batch_size > 0:
-            end_idx = start_idx + batch_size
-            batch = dealer_jobs[start_idx:end_idx]
-            job_batches.append(batch)
-            start_idx = end_idx
-        else:
-            # If no jobs for this process, add empty batch
-            job_batches.append([])
-    
-    return job_batches
-
-
 @defer.inlineCallbacks
 def poll_sqs_and_scrape():
     batch_count = 0
-    MAX_BATCH_SIZE = 15 * CPU_COUNT  # Scale batch size with CPU count
+    MAX_BATCH_SIZE = 15
     MAX_WAIT_SECONDS = 30
 
     while True:
@@ -177,7 +102,7 @@ def poll_sqs_and_scrape():
                 try:
                     response = sqs.receive_message(
                         QueueUrl=QUEUE_URL,
-                        MaxNumberOfMessages=10,  # Increased to get more messages per call
+                        MaxNumberOfMessages=1,
                         WaitTimeSeconds=10
                     )
                     messages = response.get('Messages', [])
@@ -186,20 +111,20 @@ def poll_sqs_and_scrape():
                     response = None  # Clear response object
 
                 except Exception as e:
-                    print(f"Error fetching from SQS: {e}")
+                    print(f"Process {os.getpid()}: Error fetching from SQS: {e}")
                     break
 
                 elapsed = (datetime.now() - start_time).total_seconds()
                 if elapsed >= MAX_WAIT_SECONDS:
-                    print("Max wait time reached while polling SQS.")
+                    print(f"Process {os.getpid()}: Max wait time reached while polling SQS.")
                     break
 
             if not collected_messages:
-                print("No more messages in SQS queue. Stopping reactor...")
+                print(f"Process {os.getpid()}: No more messages in SQS queue. Stopping reactor...")
                 reactor.stop()
                 return
 
-            print(f"Collected {len(collected_messages)} messages from SQS.")
+            print(f"Process {os.getpid()}: Collected {len(collected_messages)} messages from SQS.")
 
             # Step 2: Process messages in parallel threads
             for message in collected_messages:
@@ -218,7 +143,7 @@ def poll_sqs_and_scrape():
                 if success and result:
                     dealer_jobs.append(result)
                 else:
-                    print(f"Message {i + 1} failed to process.")
+                    print(f"Process {os.getpid()}: Message {i + 1} failed to process.")
                     if not success and hasattr(result, 'printTraceback'):
                         result.printTraceback()
                 result = None  # Clear result object
@@ -228,34 +153,22 @@ def poll_sqs_and_scrape():
             message_map = None
             results = None
 
-            # Step 4: Distribute jobs across multiple processes
+            # Step 4: Run spiders in parallel
             if dealer_jobs:
-                print(f"Starting multiprocessing crawl for {len(dealer_jobs)} dealers across {CPU_COUNT} processes...")
-                
-                # Distribute jobs to processes
-                job_batches = distribute_jobs_to_processes(dealer_jobs, CPU_COUNT)
-                
-                # Create and start processes
-                processes = []
-                for i, job_batch in enumerate(job_batches):
-                    if job_batch:  # Only create process if there are jobs
-                        process = multiprocessing.Process(
-                            target=worker_process, 
-                            args=(i + 1, job_batch)
-                        )
-                        processes.append(process)
-                        process.start()
-                        print(f"Started process {i + 1} with {len(job_batch)} jobs")
-                
-                # Wait for all processes to complete
-                for i, process in enumerate(processes):
-                    process.join()
-                    print(f"Process {i + 1} finished")
-                
-                print(f"Batch #{batch_count + 1} completed with multiprocessing")
-                
+                print(f"Process {os.getpid()}: Starting crawl for {len(dealer_jobs)} dealers...")
+
+                try:
+                    # Wait for crawl completion and check success
+                    crawl_success = yield crawl_all_jobs(dealer_jobs)
+                    if not crawl_success:
+                        print(f"Process {os.getpid()}: Some spiders failed to complete successfully")
+                    else:
+                        print(f"Process {os.getpid()}: Batch #{batch_count + 1} completed successfully")
+                except Exception as e:
+                    print(f"Process {os.getpid()}: Error during crawl_all_jobs: {e}")
+                    traceback.print_exc()
             else:
-                print("No valid jobs in this batch, moving to next.")
+                print(f"Process {os.getpid()}: No valid jobs in this batch, moving to next.")
 
             batch_count += 1
 
@@ -269,15 +182,56 @@ def poll_sqs_and_scrape():
             gc.collect()  # Second pass to clean up any circular references
 
 
-if __name__ == "__main__":
-    # Set multiprocessing start method to 'spawn' for better compatibility
-    multiprocessing.set_start_method('spawn', force=True)
-    
+def worker_process(process_id):
+    """Worker process function that runs the scraping loop"""
+    print(f"Starting worker process {process_id} with PID {os.getpid()}")
     try:
         task.deferLater(reactor, 0, poll_sqs_and_scrape)
         reactor.run()
-        print("Finished scraping all dealers.")
+        print(f"Process {process_id} (PID {os.getpid()}): Finished scraping all dealers.")
+    except Exception as e:
+        print(f"Process {process_id} (PID {os.getpid()}): Fatal script error: {e}")
+        traceback.print_exc()
+    finally:
+        print(f"Process {process_id} (PID {os.getpid()}): Worker process exiting.")
+
+
+if __name__ == "__main__":
+    try:
+        # Get CPU count and create that many processes
+        cpu_count = mp.cpu_count()
+        print(f"System has {cpu_count} CPU cores. Starting {cpu_count} worker processes...")
+        
+        # Create and start worker processes
+        processes = []
+        for i in range(cpu_count):
+            p = mp.Process(target=worker_process, args=(i,))
+            p.start()
+            processes.append(p)
+            print(f"Started worker process {i} with PID {p.pid}")
+        
+        # Wait for all processes to complete
+        for i, p in enumerate(processes):
+            p.join()
+            print(f"Worker process {i} (PID {p.pid}) has finished.")
+        
+        print("All worker processes have completed.")
         sys.exit(0)
+        
+    except KeyboardInterrupt:
+        print("Received interrupt signal. Terminating all processes...")
+        for p in processes:
+            if p.is_alive():
+                p.terminate()
+        
+        # Wait for processes to terminate
+        for i, p in enumerate(processes):
+            p.join(timeout=5)
+            if p.is_alive():
+                print(f"Force killing process {i} (PID {p.pid})")
+                p.kill()
+        
+        sys.exit(1)
     except Exception as e:
         print(f"Fatal script error: {e}")
         traceback.print_exc()

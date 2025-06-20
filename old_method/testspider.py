@@ -21,7 +21,7 @@ configure_logging({
     'LOG_LEVEL': 'INFO',  # Change to INFO level
     'LOG_FORMAT': '%(levelname)s: %(message)s',
     'LOG_STDOUT': False,
-    'LOG_FILE': 'spider.log'
+    'LOG_FILE': None
 })
 logger = logging.getLogger("DealerSpider")
 
@@ -308,7 +308,7 @@ class DealerSpider(scrapy.Spider):
                     Key=s3_key,
                     Body=csv_buffer.getvalue().encode('utf-8'),
                     ContentType='text/csv'
-                )            
+                )
                 
                 # Verify the upload by trying to get the object
                 s3_client.head_object(Bucket=self.s3_bucket, Key=s3_key)
