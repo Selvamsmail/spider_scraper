@@ -63,7 +63,7 @@ def process_message(message_body, receipt_handle, queue_url):
 
         css_patterns = message_body.get('css_pattern', {})
         dealer_name = message_body.get('dealer_name', 'unknown_dealer')
-        s3_key_prefix = f"webscraping/dealer_output/{current_date}/{dealer_name}"
+        s3_key_prefix = f"webscraping/tester_output/{current_date}/{dealer_name}"
         # s3_key_prefix = f"webscraping/dealer_output/20250608/{dealer_name}"
 
         processed_data = {
